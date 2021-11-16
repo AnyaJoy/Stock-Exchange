@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/company.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <link rel="icon"  href="https://www.freefavicon.com/freefavicons/objects/color-star-3-152-217610.png"/>
+</head>
+<body>
+    <div id="loading"><img id="loading-image" src="../images/loader.gif"/></div>
+    <div id="pageWrapper">
+        <div id="logoName">
+            <img id="img" onerror="hidetheImg()"/>
+            <span id="companySymbol"></span>
+            <span id="companyName"></span>
+        </div>
+        <div class="infoWrapper">
+            <div id="tringle_wrapper"><div id="triangleUp"></div></div>
+            <div id="companyInfo">
+                <div id="stockPricePercentages">
+                    <span id="stockPrice">Stock price: </span>
+                    <span id="stockPercentages" class="negative neutral positive"></span>
+                </div>
+                <div id="aboutCompany"></div>
+                <div id="chart">
+                    <div>
+                        <canvas id="myChart" ></canvas>
+                    </div>
+                </div>
+                <div id="companyWebsite"></div>
+            </div>
+        </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="../js/company.js"></script> 
+</body>
+</html>

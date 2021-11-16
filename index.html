@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Stock X-change</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon"  href="https://www.freefavicon.com/freefavicons/objects/color-star-3-152-217610.png"/>
+    
+  </head>
+
+  <body id="body">
+      <div class="page_wrapper">
+         <div class="searchbar_space">
+            <div id="marquee_wrapper"><span id="marquee"></span></div>
+            <div id="header">Search Nasdaq Stocks</div>
+            <form id="search_wrapper">
+              <img class="mag_glass" src="./images/mag_glass.svg"/>
+              <input id="searchInput" type="text" placeholder="Search.." onfocus="this.placeholder = ''">
+              <div  id="searchButton" class="search_button" value="Submit" type="Submit">Go</div>
+            </form>
+          </div>
+
+          <div id="search_result_space">
+            <div id="tringle_wrapper"><div id="triangleUp"></div></div>
+            <div id="loading"><img id="loading-image" src="./images/loader.gif" alt="Loading..."/></div>
+            <div id="suggestions"></div>
+          </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
+
