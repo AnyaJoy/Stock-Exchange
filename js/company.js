@@ -43,7 +43,6 @@ let stockPercentages = document.getElementById ("stockPercentages");
 fetch (url)
 .then ((response) => response.json())
 .then((data) => {
-    console.log(data)
     let percentages = data["profile"]["changesPercentage"];
 
     if (percentages === "(0%)" | percentages === "0.0") {} else {percentages = parseFloat(percentages).toFixed(2)};
@@ -99,7 +98,10 @@ fetch (urlChart)
         datesArray.push(datesPrices[i]["date"]);
         priceArray.push(datesPrices[i]["close"])
     }
+    console.log(datesArray)
     let datesArrayReversed = datesArray.reverse();
+    let priceArrayReversed = priceArray.reverse();
+    console.log(datesArrayReversed)
 
     hideLoading();
     displayPage();
@@ -112,7 +114,7 @@ fetch (urlChart)
         labels: datesArrayReversed,
         datasets: [{
             label: 'Stock Price History',
-            data: priceArray,
+            data: priceArrayReversed,
             backgroundColor:'rgb(153,142,215)',
             borderColor: 'rgb(75, 192, 192)',
             borderWidth: 1,
