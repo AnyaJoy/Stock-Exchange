@@ -83,8 +83,11 @@ body {
     border: none;
     background-color: white;
     margin: 5px 5px;
-    width: 70%;
+    width: 83%;
+}
 
+#searchInput:active {
+    background-color: white;
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
