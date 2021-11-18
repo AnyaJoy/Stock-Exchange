@@ -1,50 +1,35 @@
-// loader
+// getting elements
 const loader = document.querySelector("#loading");
-
 const pageWrapper = document.getElementById("pageWrapper");
+const tringleWrapper = document.getElementById("tringle_wrapper");
+const companyWrapper = document.getElementById ("companyWrapper");
+const img = document.getElementById ("img");
+let stockPercentages = document.getElementById ("stockPercentages");
 
-// showing loading
 function displayLoading() {
     loader.classList.add("display");
-    // to stop loading after some time
     setTimeout(() => {
         loader.classList.remove("display");
     }, 4000);
 }
 
-// hiding loading 
-function hideLoading() {
-    loader.classList.remove("display");
-}
-
-const tringle_wrapper = document.getElementById("tringle_wrapper");
-
-function displayCompanyInfo() {
-    tringle_wrapper.style.display = "block";
-};
-
-
-function displayPage() {
-    pageWrapper.style.display = "block";
-};
-
+// loader on page load
 displayLoading();
 
+//getting the company's symbol from url
 const companySymbolExtracted = window.location.search.replace ("?symbol=", "");
 
+//fetching the company's data using the symbol
 const url = "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/" + companySymbolExtracted;
-
-const companyWrapper = document.getElementById ("companyWrapper");
-
-const img = document.getElementById ("img");
-
-let stockPercentages = document.getElementById ("stockPercentages");
 
 fetch (url)
 .then ((response) => response.json())
 .then((data) => {
+
+    //change in stock price
     let percentages = data["profile"]["changesPercentage"];
 
+    //styling the change in stock price depemding on how it has changed
     if (percentages === "(0%)" | percentages === "0.0") {} else {percentages = parseFloat(percentages).toFixed(2)};
 
     if (percentages < 0) {
@@ -53,13 +38,11 @@ fetch (url)
         stockPercentages.classList.remove("negative");
         stockPercentages.classList.add("positive");
     };
-
     if (percentages === "(0%)") {
         stockPercentages.classList.remove("negative");
         stockPercentages.classList.remove("positive");
         stockPercentages.classList.add("neutral");
     };
-
     if (percentages === "0.0") {
         stockPercentages.classList.remove("negative");
         stockPercentages.classList.remove("positive");
@@ -67,6 +50,7 @@ fetch (url)
         stockPercentages.classList.add("neutral2");
     };  
 
+    //putting the company's logo, symbol, name, stock price, price change, description and website link on the DOM
     img.src = data["profile"]["image"];
     companySymbol.append(companySymbolExtracted);
     companyName.append(`(${data["profile"]["companyName"]})`);
@@ -81,33 +65,36 @@ fetch (url)
     companyWebsite.append(website);
 });
 
-function hidetheImg() {
-    img.style.display = "none";
-};
-
+//creating a chart with stock price history
 const urlChart = 'https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/'+companySymbolExtracted+'?serietype=line';
 
+//creating arrays for th whole data and dates and prices separately
 let datesPrices = [];
 let datesArray = [];
 let priceArray = [];
 
+//fetching the stock history
 fetch (urlChart)
 .then ((response) => response.json())
 .then((data) => {
+
+    //pushing dates and prices to arrays
     datesPrices = data.historical;
     for (let i = 0; i < datesPrices.length; i = i + 30) {
         datesArray.push(datesPrices[i]["date"]);
         priceArray.push(datesPrices[i]["close"])
     }
-    console.log(datesArray)
+
+    //reversing the arrays for correct displaying
     let datesArrayReversed = datesArray.reverse();
     let priceArrayReversed = priceArray.reverse();
     console.log(datesArrayReversed)
 
-    hideLoading();
-    displayPage();
-    displayCompanyInfo();
+    loader.classList.remove("display");;
+    pageWrapper.style.display = "block";;
+    tringleWrapper.style.display = "block";
 
+    //creating the chart
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
     type: 'line',

@@ -13,12 +13,21 @@ body {
 
 #header {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
     text-align: left;
     width: 60%;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+#site-description {
+    padding: 30px;
+    font-size: 20px;
+    line-height: 50px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .searchbar_space {
@@ -106,7 +115,8 @@ cursor: default;
     width: 80px;
     height: 70%;
     padding-top: 6px;
-    opacity: 0.8;
+    cursor: default;
+    opacity: 0.7;
 }
 
 .able{
@@ -177,13 +187,12 @@ a {
     margin-left: 15%;
     padding-top: 1%;
     padding-bottom: 0%;
-    margin-top: -3.6%;
-    
+    margin-top: -3.6%; 
 }
 
 #tringle_wrapper {
     background-color: rgb(240, 238, 255);;
-    display: none;
+    /* display: none; */
     margin-top: -2.5%;
 }
 
