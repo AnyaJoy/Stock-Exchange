@@ -100,8 +100,8 @@ cursor: default;
     color: white;
     background-color: #692BD2FF;
     position: absolute;
-    right: 6px;
-    top: 6px;
+    right: 7px;
+    top: 7px;
     text-align: center;
     width: 80px;
     height: 70%;
@@ -198,14 +198,15 @@ a {
   -webkit-animation: load7 1.8s infinite ease-in-out;
   animation: load7 1.8s infinite ease-in-out;
 }
+
 .loader {
     display: none;
     color: #692BD2FF;
-    width: fit-content;
+    margin-right: -8px;
     font-size: 4px;
     position: relative;
     top: 11px;
-    right: 54px;
+    right: 55px;
     text-indent: -9999em;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -213,6 +214,7 @@ a {
     -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
 }
+
 .loader:before,
 .loader:after {
   content: '';
