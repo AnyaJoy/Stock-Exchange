@@ -15,19 +15,20 @@
 
   <body id="body">
       <div class="page_wrapper">
-         <div class="searchbar_space">
-            <div id="marquee_wrapper"><span id="marquee"></span></div>
+        <div id="marquee_wrapper"><span id="marquee"></span></div>
             <div id="header">Search Nasdaq Stocks</div>
-            <form id="search_wrapper">
+         <div class="searchbar_space">
+            
+            <div><form id="search_wrapper">
               <img class="mag_glass" src="./images/mag_glass.svg"/>
               <input id="searchInput" type="text" placeholder="Search.." onfocus="this.placeholder = ''">
               <div  id="searchButton" class="search_button" value="Submit" type="Submit">Go</div>
-            </form>
+            </form></div>
+            <span class="loader">Loading...</span>
           </div>
 
           <div id="search_result_space">
             <div id="tringle_wrapper"><div id="triangleUp"></div></div>
-            <div id="loading"><img id="loading-image" src="./images/loader.gif" alt="Loading..."/></div>
             <div id="suggestions"></div>
           </div>
     
