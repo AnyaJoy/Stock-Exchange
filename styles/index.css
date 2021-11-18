@@ -36,7 +36,7 @@ body {
     max-height: 100%;
     margin-top: 2%;
     border-radius: 10px;
-    
+    height: 410px;
 }
 
 #suggestions {
@@ -45,10 +45,9 @@ body {
     justify-content: space-between;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
     background: white;
-    border-radius: 10px;
+    border-radius: 5px;
     max-height: 100%;
     overflow: hidden;
-    
 } 
 
 #suggestions_element {
@@ -64,8 +63,8 @@ body {
     display: flex;
     position: relative;
     width: 800px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-    border-radius: 10px;
+    box-shadow: rgb(50 50 93 / 7%) 0px 30px 60px -12px, rgb(0 0 0 / 20%) 0px 18px 36px -18px;
+    border-radius: 5px;
     height: 50px;
 }
 
@@ -245,6 +244,8 @@ a {
     box-shadow: 0 2.5em 0 0;
   }
 }
+
+
 
 
 

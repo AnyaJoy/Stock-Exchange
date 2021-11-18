@@ -14,10 +14,6 @@ const searchWrapper = document.getElementById("search_wrapper");
 const loader = document.querySelector(".loader");
 
 searchInput.addEventListener("input", function () {
-    if ((e.which == 13) | (searchInput.value == "")){
-        return false;
-      }
-
     if (searchInput.value !== "") {
     searchButton.addEventListener("click", searchCompanies);
     searchButton.classList.add("able");
