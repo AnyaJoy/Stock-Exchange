@@ -65,6 +65,11 @@ fetch (url)
     companyWebsite.append(website);
 });
 
+//hides the logo if it doesn't exist
+function hidetheImg() {
+    img.style.display = "none"
+};
+
 //creating a chart with stock price history
 const urlChart = 'https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/'+companySymbolExtracted+'?serietype=line';
 
