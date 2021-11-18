@@ -76,7 +76,8 @@ fetch (url)
 
     const website = document.createElement("a");
     website.href = data["profile"]["website"];
-    website.innerHTML = "Visit the Company's Website"
+    website.target="_blank";
+    website.innerHTML = "Visit the Company's Website";
     companyWebsite.append(website);
 });
 
