@@ -95,8 +95,10 @@ const searchCompanies = () => {
           //creating a search element with link to the company's profile
           const searchedCompany = document.createElement("a");
           searchedCompany.setAttribute("id", "suggestions_element");
+          searchedCompany.target = "_blank";
           searchedCompany.href =
             "./html/company.html?symbol=" + data[i]["symbol"];
+
 
           // fethcing the company's data
           const url =
